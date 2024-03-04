@@ -1,0 +1,23 @@
+{
+  "name": "auth-server",
+  "version": "1.0.0",
+  "description": "This is going to server JWT Tokens for authentication across all platform",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "Auth",
+    "JWT"
+  ],
+  "author": "Jyoti Prakash Samal",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.3",
+    "mongoose": "^8.2.0",
+    "nodemon": "^3.1.0"
+  }
+}
