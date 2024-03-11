@@ -6,15 +6,13 @@ const bcrypt = require('bcryptjs');
 
 // This is a function to add user to my DB
 module.exports.signup = async(req, res) => {
-    //If user is present before, Give appropriate message without adding duplicate entry
-    if(User.findOne({email : req.body.email}), (err, result) => {
-        console.log("Result : ", result);
-        if(result){
-            return res.json({
-                "message" : "Email address is already present!"
-            });
-        }
-    })
+    const result = await User.findOne({ email: req.body.email });
+    // If user is present before, give appropriate message without adding duplicate entry
+    if (result) {
+        return res.json({
+            message: "Email address is already present!"
+        });
+    }
     userData = {
         name : req.body.name,
         age : req.body.age,
